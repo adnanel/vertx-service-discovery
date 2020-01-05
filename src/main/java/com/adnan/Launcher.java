@@ -37,6 +37,7 @@ public class Launcher  extends io.vertx.core.Launcher {
         var hazelConfig = new Config();
         var port = System.getenv("PORT");
         port = port == null ? "9000" : port;
+        System.out.println("Using port " + port);
         hazelConfig.getNetworkConfig().setPort(Integer.parseInt(port));
 
         ClusterManager mgr = new HazelcastClusterManager(hazelConfig);
